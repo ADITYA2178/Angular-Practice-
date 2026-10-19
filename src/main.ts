@@ -3,5 +3,6 @@ import { appConfig } from './app/app.config';
 import { App } from './app/app';
 import { HeaderComponent } from './app/header.component';
 
-bootstrapApplication(App, {...appConfig, providers: [HeaderComponent]})
+bootstrapApplication(App)
   .catch((err) => console.error(err));
+
