@@ -14,10 +14,35 @@ Once the server is running, open your browser and navigate to `http://localhost:
 
 ## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Angular CLI can create a component for you, including its TypeScript class, HTML template, CSS file, and unit test. Run this from the project folder:
 
 ```bash
-ng generate component component-name
+ng g c component-name
+```
+
+`ng g c` is the short form of `ng generate component`. Replace `component-name` with the name you want, using lowercase words separated by hyphens (kebab-case). For example, to create a user component:
+
+```bash
+ng g c user
+```
+
+The same command in its longer form is:
+
+```bash
+ng generate component user
+```
+
+That creates a `user` folder under `src/app/` with these files:
+
+- `user.component.ts` — the component class. Its selector is `app-user`.
+- `user.component.html` — the template, which is what the component renders.
+- `user.component.css` — styles that apply only to this component.
+- `user.component.spec.ts` — the unit test for the component.
+
+To show it on the page, import `UserComponent` in the parent component (for example `App` in `src/app/app.ts`) and add it to that component's `imports` array. Then place the selector in the parent template:
+
+```html
+<app-user></app-user>
 ```
 
 For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
